@@ -69,10 +69,10 @@ public class GuildListener implements Net.HttpResponseListener {
             String server = character.getString("realm");
             String level = character.getString("level");
 
-            table.add(createLabel(name, Color.WHITE));
-            table.add(createLabel("(" + level + ")", Color.GRAY));
+            table.add(createLabel(name, Color.WHITE)).align(Align.left);
+            table.add(createLabel("(" + level + ")", Color.GRAY)).align(Align.left);
             table.row();
-            table.add(createLabel(server, Color.ORANGE));
+            table.add(createLabel(server, Color.ORANGE)).align(Align.left).colspan(2);
 
             menuScrollPane.add(table).align(Align.left);
             menuScrollPane.row();

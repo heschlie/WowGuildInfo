@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.utils.Align;
 
 public class WowGuildInfo extends ApplicationAdapter {
     private Stage stage;
@@ -21,11 +22,13 @@ public class WowGuildInfo extends ApplicationAdapter {
 
         mainTable = new Table();
         mainTable.setFillParent(true);
+        mainTable.align(Align.left);
         stage.addActor(mainTable);
 
         table = new Table();
+        table.align(Align.left);
         pane = new ScrollPane(table, Assets.getInstance().skin);
-        mainTable.add(pane);
+        mainTable.add(pane).align(Align.left);
 
 		GetWowJson.getGuildInfo("gorgonnash", "the Kush Collective", table);
     }
